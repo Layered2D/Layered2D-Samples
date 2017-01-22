@@ -13,6 +13,8 @@ namespace OvalPerformanceTest
         {
             this.Width = Screen.PrimaryScreen.Bounds.Width;
             this.Height = Screen.PrimaryScreen.Bounds.Height;
+            this.Location = Screen.PrimaryScreen.Bounds.Location;
+            this.StartPosition = FormStartPosition.Manual;
 
             p = new SKPaint()
             {

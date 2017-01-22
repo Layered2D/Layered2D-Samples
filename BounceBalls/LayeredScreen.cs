@@ -6,6 +6,7 @@ using SkiaSharp;
 using Layered2D;
 using Layered2D.Windows;
 using Layered2D.Collections;
+using SkiaSharp.Views.Desktop;
 
 namespace BounceBalls
 {
@@ -19,8 +20,9 @@ namespace BounceBalls
 
         public LayeredScreen() : base()
         {
-            this.Size = Screen.PrimaryScreen.Bounds.Size;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size.ToSKSize();
             this.Location = Screen.PrimaryScreen.Bounds.Location;
+            this.StartPosition = FormStartPosition.Manual;
 
             Ball.CreateBalls(ref balls, this.Width, this.Height);
         }
